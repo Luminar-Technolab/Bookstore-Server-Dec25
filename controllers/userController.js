@@ -1,0 +1,12 @@
+//register
+exports.registerController = async (req,res) =>{
+    console.log("Inside registerController");
+    console.log(req.body);    
+    res.status(201).json("Register requset recieved")
+}
+
+//login
+
+//user edit
+
+//admin edit
