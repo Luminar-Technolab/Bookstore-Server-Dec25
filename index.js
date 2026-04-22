@@ -4,12 +4,13 @@ require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const routes = require('./routes/allRoutes')
+require('./config/db')
 
 //Create server using express package
 const server = express()
 //Enable cors in server
 server.use(cors())
-//parse json to js content
+//parse json to js content : middleware that only parses json and only looks at requests where the Content-Type header matches the type option.
 server.use(express.json())
 //use routes in server
 server.use(routes)

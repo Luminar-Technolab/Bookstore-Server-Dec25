@@ -793,6 +793,15 @@
             }
             }
             ])
+    11. MongoDB Atlas is a cloud-based Database-as-a-Service (DBaaS) provided by MongoDB, Inc.. It allows developers to deploy, manage, and scale MongoDB databases on the cloud without handling server setup or maintenance.
+        - Key Features of MongoDB Atlas : Cloud Hosting, Automatic Scaling, Security, Backup & Recovery, Monitoring, Easy Connection
+        - Steps to Use MongoDB Atlas
+            - Create account on MongoDB website
+            - Create Cluster, Browse collection  -> create database
+            - Create DB User
+            - Add IP Address
+            - Get Connection String , connect cluster -> choose drivers -> copy connection string
+            - Connect in Node.js project
 
             NODE JS 
         -----------------
@@ -878,11 +887,11 @@
     1. create a folder to hold all files of project
     2. Create project configuaration file using create package.json file : use command : npm init -y
     3. Update package.json file script by adding start as "node index.js", where index.js is the main entry file of project
-    4. Install packages : express, cors, dotenv
+    4. Install packages : express, cors, dotenv,  mongoose
     5. Create .env file to hold project secret / configuaration data
     6. Create .gitignore file to add files / folder to avoid to adding into git
     7. Create index.js file where we define express server
-        - Import all packages/files (express, cors, dotenv, allRoutes.js file)
+        - Import all packages/files (express, cors, dotenv,db.js file, allRoutes.js file)
         - Create server using express package
         - Enable cors in server
         - Use routes in server
@@ -891,8 +900,45 @@
         - Resolve API (get request to http://localhost:3000/) using express 
             - syntax : server.httpRequest(url,callback) , use callback to define the logic to solve the API
     8. To run the server : use command : node index.js
-    9. Create controller folder in project, create js file to resolve client request
+    9. Create controller folder in project, create js file to resolve client request, import model
     10. Create routes folder to hold all routes of this project, create a js file to define routes
         - To setup routes outside express server, create object for Router class of express
         - to set path use object of Router class, syntax : router-object.httpRequest(path,controller function)
         - Export router object
+    11. Create config folder in server folder to define db connection
+        - create js file 
+            - Import mongoose
+            - get db connection string
+            - Connect the db using connect method of mongoose
+    12. Create models folder in server folder  and create js file for each collection
+            - Import mongoose
+            - Define schema using mongoose
+            - Create model using schema
+            - export the model
+
+        MONGOOSE
+    ---------------
+
+    1. To connect Node.js with MongoDB, the most common way is using Mongoose.
+    2. Mongoose is an open-source object data modeling (ODM) library for MongoDB, designed for use in asynchronous Node.js
+    3. Uses
+        - Structured schema-based solution to model application data
+        - built-in validation
+        - type casting
+        - middleware to simplify data handling
+    4. Schema : Structure of document stored in a collection
+        - To create schema : create an object for Schema class of Mongoose, Structure / blueprint of data
+    5. Model : It represents a collection in MongoDB and is used to interact with documents (records) in that collection. Tool created from schema to perform CRUD operations
+        - To create model : use Mongoose model method
+    6. Schema → Model → Collection → Documents
+    7. Use Model for CRUD
+        - Create : 
+            1. Create an object for model, and save the object in order to available in MongoDB
+            2. create method to insert document, syntax : model-name.create({key:value...})
+        - Read :
+            1. find / findOne / findById
+        - Update :
+            1. updateOne / updateMany / findByIdAndUpdate
+        - Delete :
+            1. deleteOne / deleteMany / findByIdAnddelete
+    8. Install Mongoose : npm i mongoose
