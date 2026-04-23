@@ -13,7 +13,11 @@ exports.registerController = async (req,res) =>{
         res.status(409).json("User Already Exists... Please Login!!!")
     }else{
     // if not present, add all details to db, send response as newly inserted document details
-        
+        let encryptPassword = await bcrypt.hash(password,10)
+        const newUser = await users.create({
+            username,email,password: encryptPassword
+        })
+        res.status(201).json(newUser)
     }
 }
 
