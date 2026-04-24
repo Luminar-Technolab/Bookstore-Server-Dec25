@@ -845,6 +845,38 @@
         - Install cors package : npm install cors
         - Use cors in app
     5. CORS = Permission system for cross-origin browser requests 🚀
+    6. Authentication & Authorization 
+        - Authentication is the process of verifying the identity of a user.
+        - Authorization means checking what permissions a user has after login. Perfomed using JWT (JSON WEB TOKEN)
+    
+
+            JSON WEB TOKEN
+        ----------------------
+    1. JWT (JSON Web Token) is a secure way to authenticate users and share user data between client and server.
+    2. What is JWT : When user logs in successfully:
+        - Server creates a token using JWT
+        - Sends token to client
+        - Client stores token
+        - Client sends token with future requests
+    3. JWT Structure : It has 3 parts -  Header.Payload.Signature
+        - Header : Algorithm + token type
+        - Payload : User data can be stored for future use
+        - Signature : Used to verify token is valid.
+    4. Install JSON web token : npm install jsonwebtoken
+    5. Create Token : use sign method
+    6. Verify Token : use verify method
+    7. JWT Flow
+        Login
+        ↓
+        Server creates token
+        ↓
+        Client stores token
+        ↓
+        Send token in API request
+        ↓
+        Server verifies token
+        ↓
+        Access Granted
 
             EXPRESS JS 
         -----------------
@@ -887,7 +919,7 @@
     1. create a folder to hold all files of project
     2. Create project configuaration file using create package.json file : use command : npm init -y
     3. Update package.json file script by adding start as "node index.js", where index.js is the main entry file of project
-    4. Install packages : express, cors, dotenv,  mongoose
+    4. Install packages : express, cors, dotenv,  mongoose, jsonwebtoken
     5. Create .env file to hold project secret / configuaration data
     6. Create .gitignore file to add files / folder to avoid to adding into git
     7. Create index.js file where we define express server
