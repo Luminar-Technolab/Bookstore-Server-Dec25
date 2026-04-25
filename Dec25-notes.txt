@@ -835,7 +835,10 @@
         - Global : Node.js global object containing built-in variables/functions. it can used in node app without import/export, ex : console, setTimeout, process ...
         - process : Its a nodejs global object which provides information and control over the current running Node.js application.
             - Environmental variable : Are secret data or configuration of an application, to hold env variables we have to create .env files, it can be accessed via process.env in node app, To load .env file contents into process.env using dotenv package
-
+    4. Authentication & Authorization 
+        - Authentication is the process of verifying the identity of a user.
+        - Authorization means checking what permissions a user has after login. Perfomed using JWT (JSON WEB TOKEN)
+    
             CORS - CROSS ORIGIN RESOURCE SHAIRING
         --------------------------------------------
     1. It is a browser security feature that controls whether a frontend from one origin can access resources from another origin.
@@ -845,9 +848,6 @@
         - Install cors package : npm install cors
         - Use cors in app
     5. CORS = Permission system for cross-origin browser requests 🚀
-    6. Authentication & Authorization 
-        - Authentication is the process of verifying the identity of a user.
-        - Authorization means checking what permissions a user has after login. Perfomed using JWT (JSON WEB TOKEN)
     
 
             JSON WEB TOKEN
