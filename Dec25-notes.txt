@@ -838,6 +838,17 @@
     4. Authentication & Authorization 
         - Authentication is the process of verifying the identity of a user.
         - Authorization means checking what permissions a user has after login. Perfomed using JWT (JSON WEB TOKEN)
+    5. Middleware : Function that runs between the request and response cycle
+        - Middleware Function can 
+            - Passes control to the next middleware/controller function
+            - Sends a response directly
+            - Handles errors
+        - Types of middleware
+            - Application specific middleware : A middleware active in entire app
+            - Route specific middleware : A middleware only active at certain route
+        - To Create middleware : create a function with minimum 3 arguments (req,res,next)
+        - Request Flow : Client Request → Middleware → Route Handler → Response
+        - Request with multiple middleware: Client → Middleware1 → Middleware2 → Middleware3 → Route → Response
     
             CORS - CROSS ORIGIN RESOURCE SHAIRING
         --------------------------------------------
@@ -848,6 +859,7 @@
         - Install cors package : npm install cors
         - Use cors in app
     5. CORS = Permission system for cross-origin browser requests 🚀
+
     
 
             JSON WEB TOKEN
@@ -877,6 +889,7 @@
         Server verifies token
         ↓
         Access Granted
+    
 
             EXPRESS JS 
         -----------------

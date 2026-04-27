@@ -64,7 +64,11 @@ exports.googleLoginController = async (req,res) =>{
     }
 }
 
-
 //user edit
+exports.userEditController = async (req,res)=>{
+    console.log("Inisde userEditController");
+    console.log(req.body);
+    res.status(200).json("Recieved userEdit request")    
+}
 
 //admin edit
