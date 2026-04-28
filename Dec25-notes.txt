@@ -926,13 +926,14 @@
         Controller
         ↓
         View / JSON Response
+    7. Static File Enabling in Express Server : using express.static() middleware
 
     STEPS TO CREATE A EXPRESS SERVER
     ---------------------------------
     1. create a folder to hold all files of project
     2. Create project configuaration file using create package.json file : use command : npm init -y
     3. Update package.json file script by adding start as "node index.js", where index.js is the main entry file of project
-    4. Install packages : express, cors, dotenv,  mongoose, jsonwebtoken
+    4. Install packages : express, cors, dotenv,  mongoose, jsonwebtoken, multer
     5. Create .env file to hold project secret / configuaration data
     6. Create .gitignore file to add files / folder to avoid to adding into git
     7. Create index.js file where we define express server
@@ -987,3 +988,20 @@
         - Delete :
             1. deleteOne / deleteMany / findByIdAnddelete
     8. Install Mongoose : npm i mongoose
+
+
+        MULTER
+    ---------------
+
+    1. Multer is a node.js middleware for handling multipart/form-data
+    2. To use Multer : Installation - npm i multer
+    3. Usage of multer
+        - Multer adds a body object and a file or files object to the request object
+        - The body object contains the values of the text fields of the form
+        - The file or files object contains the files uploaded via the form.
+        - Define storage for uploaded files
+        - It can apply filtering as well
+    4. We can apply multer middleware as router specific
+    5. Methods in multer
+        - single(fieldName) : used to handle single uploaded file 
+        - array('fieldName') : used to handle multiple uploaded files 
