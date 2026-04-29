@@ -1003,5 +1003,5 @@
         - It can apply filtering as well
     4. We can apply multer middleware as router specific
     5. Methods in multer
-        - single(fieldName) : used to handle single uploaded file 
+        - single('fieldName') : used to handle single uploaded file 
         - array('fieldName') : used to handle multiple uploaded files 
