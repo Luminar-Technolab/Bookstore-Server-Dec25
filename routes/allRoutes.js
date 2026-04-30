@@ -3,6 +3,7 @@ const express = require('express')
 const userController = require('../controllers/userController')
 const authMiddleware = require('../middlewares/authMiddleware')
 const multerMiddleware = require('../middlewares/multerMiddleware')
+const bookController = require('../controllers/bookController')
 
 //To setup routes outside express server, create object for Router class of express
 const router = new express.Router()
@@ -18,5 +19,7 @@ router.post('/google-login',userController.googleLoginController)
 
 //user edit
 router.put('/user/:id',authMiddleware,multerMiddleware.single('picture'),userController.userEditController)
+//add book
+router.post('/books',authMiddleware,multerMiddleware.array('uploadImages',3),bookController.addBookController)
 
 module.exports = router

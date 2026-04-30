@@ -1005,3 +1005,13 @@
     5. Methods in multer
         - single('fieldName') : used to handle single uploaded file 
         - array('fieldName') : used to handle multiple uploaded files 
+
+        GEMINI API SETUP
+    ----------------------------
+
+    1. Steps to set api key
+        - Go to Google AI Studio: https://aistudio.google.com/prompts/new_chat
+        - Login with Gmail
+        - Click Get API Key
+        - Create Key : AIzaSyCTMoTrWcEUnYOuy_YjayYKiKIo6dT15tE
+        - 
