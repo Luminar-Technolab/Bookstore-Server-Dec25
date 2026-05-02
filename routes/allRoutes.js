@@ -14,6 +14,8 @@ router.post('/register',userController.registerController)
 router.post('/login',userController.loginController)
 //google login
 router.post('/google-login',userController.googleLoginController)
+//homeBooks
+router.get('/home-books',bookController.getHomePageBookController)
 
 //-----------------------AUTHORISED USER - USER---------------------------------------
 
