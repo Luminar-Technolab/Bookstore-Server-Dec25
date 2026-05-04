@@ -23,5 +23,11 @@ router.get('/home-books',bookController.getHomePageBookController)
 router.put('/user/:id',authMiddleware,multerMiddleware.single('picture'),userController.userEditController)
 //add book
 router.post('/books',authMiddleware,multerMiddleware.array('uploadImages',3),bookController.addBookController)
+//get BooksPage
+router.get('/all-books',authMiddleware,bookController.getBooksPageController)
+//get user upload books
+router.get('/user-books',authMiddleware,bookController.getUserBooksController)
+//get user bought books
+router.get('/bought-books',authMiddleware,bookController.getUserBoughtBooksController)
 
 module.exports = router
