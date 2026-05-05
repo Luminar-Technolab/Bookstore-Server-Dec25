@@ -33,7 +33,8 @@ exports.getHomePageBookController = async (req,res)=>{
 exports.getBooksPageController = async (req,res)=>{
     console.log("Inside getBooksPageController");
     const loginUserMail = req.payload
-    const allBooks = await books.find({sellerMail:{$ne:loginUserMail}})
+    const searchKey = req.query.search
+    const allBooks = await books.find({sellerMail:{$ne:loginUserMail},title:{$regex:searchKey,$options:"i"}})
     res.status(200).json(allBooks)
 }
 
@@ -52,9 +53,23 @@ exports.getUserBoughtBooksController = async (req,res)=>{
     const userBoughtBooks = await books.find({buyerMail:loginUserMail})
     res.status(200).json(userBoughtBooks)
 }
+
 //remove book by a user : logined user can delete uploaded book 
+exports.removeUserUploadBooksController = async (req,res)=>{
+    console.log("Inside removeUserUploadBooksController");
+    const loginUserMail = req.payload
+    const {id} = req.params
+    const removeBook = await books.findByIdAndDelete({_id:id})
+    res.status(200).json(removeBook)
+}
 
 //get single book to view
+exports.viewBookController = async (req,res)=>{
+    console.log("Inside viewBookController");
+    const {id} = req.params
+    const bookDetails = await books.findById({_id:id})
+    res.status(200).json(bookDetails)
+}
 
 //get all books : at admin resource page
 

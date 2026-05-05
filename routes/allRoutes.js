@@ -29,5 +29,9 @@ router.get('/all-books',authMiddleware,bookController.getBooksPageController)
 router.get('/user-books',authMiddleware,bookController.getUserBooksController)
 //get user bought books
 router.get('/bought-books',authMiddleware,bookController.getUserBoughtBooksController)
+//remove user upload books
+router.delete('/books/:id',authMiddleware,bookController.removeUserUploadBooksController)
+//view book
+router.get('/books/:id',authMiddleware,bookController.viewBookController)
 
 module.exports = router
