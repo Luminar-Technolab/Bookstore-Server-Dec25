@@ -620,6 +620,7 @@
                     - syntax : useRef(InitialValue)
                 - useMemo Hook : Memoizes expensive calculations.
                 - useCallback Hook : Memoizes functions to prevent re-creation.
+                - useContext hook : used to share data between components without props drilling
             - Custom Hooks : User defined function To perform specific task. It should starts 'use ' keyword. 
                 - Steps to create custom hooks
                     1. Create js file inorder to define hooks, it name should starts with 'use'
@@ -671,6 +672,8 @@
             - APi call using axios Instance : axiosInstance(config)
     27. Data Sharing Techniques 
         - State Lifting : State will be lifted to the common parent so parent share data using 'props' between child components
+        - Using REDUX library
+        - Using Context API
     28. Props Drilling : Props drilling happens when you pass data from a parent component to a deeply nested child component through multiple intermediate components—even if those intermediate components don’t need the data.
         - Why is it a Problem?
             ❌ Makes code hard to maintain
@@ -707,6 +710,15 @@
             2. Create a redux folder in src 
                 - Create store js file to create global redux store and deefine logic to create  redux store
                 - Create slice file to define action & reducers. export both and used reducer in store file and action in components
+    31. CONTEXT API
+        - The Context API in React is a built-in feature used to share data across components without passing props manually at every level
+        - Context API solves props drilling by creating a global-like state accessible anywhere in the component tree.
+        - Core Concepts
+            1. createContext() : Creates a context object.
+            2. Provider : Wraps components and provides data.
+            3. useContext() : Used inside components to access context data.
+        - 🔹 Simple Flow
+            Create context --> Wrap components using Provider ---> Access data using useContext
 
             BACKEND 
         -----------------
