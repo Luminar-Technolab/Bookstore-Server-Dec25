@@ -40,6 +40,11 @@ router.put('/books/:id/buy',authMiddleware,bookController.bookPaymentController)
 //-----------------------AUTHORISED USER - ADMIN---------------------------------------
 //admin profile edit
 router.put('/profile/:id',adminMiddleware,multerMiddleware.single('picture'),userController.userEditController)
-
+//all users list
+router.get('/user-list',adminMiddleware,userController.getAllUsersController)
+//all books list
+router.get('/book-list',adminMiddleware,bookController.getAllBookController)
+//update books status
+router.put('/books/:id',adminMiddleware,bookController.updateBookStatusController)
 
 module.exports = router
