@@ -34,6 +34,8 @@ router.get('/bought-books',authMiddleware,bookController.getUserBoughtBooksContr
 router.delete('/books/:id',authMiddleware,bookController.removeUserUploadBooksController)
 //view book
 router.get('/books/:id',authMiddleware,bookController.viewBookController)
+//get book via ai
+router.post('/books-ai',authMiddleware,bookController.generateBookDetailsAIController)
 //book payment
 router.put('/books/:id/buy',authMiddleware,bookController.bookPaymentController)
 
